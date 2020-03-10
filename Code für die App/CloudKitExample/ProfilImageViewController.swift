@@ -13,7 +13,7 @@ class ProfilImageViewController: UIViewController {
     let publicDB = CKContainer.default().publicCloudDatabase
     var tempID: Any = ()
     
-    
+    // These actions change the profilimage of the user
     @IBAction func boy1Action(_ sender: UIButton) {
         updateData(update: "boy1.png")
         
@@ -68,17 +68,16 @@ class ProfilImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
         self.updateProfilImageInPoints()
         })
     }
     
-    // Update data in ResidentDB
+    // Update the users image in ResidentDB
     func updateData(update: String) {
         
         publicDB.fetch(withRecordID: LoginViewController.resident as! CKRecord.ID) { (record, error) in
@@ -91,7 +90,7 @@ class ProfilImageViewController: UIViewController {
             }
         }
     }
-    // Update data in PointsDB
+    // Update the users image in PointsDB
     func updateDataInPointsDB(update: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
         print(self.tempID)
@@ -115,7 +114,7 @@ class ProfilImageViewController: UIViewController {
             }
         }
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in

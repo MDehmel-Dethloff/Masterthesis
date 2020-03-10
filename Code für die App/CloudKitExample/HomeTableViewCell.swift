@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets the properties for the Cells used in the upper TableView in HomeViewController.swift
 class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCell: UIImageView!

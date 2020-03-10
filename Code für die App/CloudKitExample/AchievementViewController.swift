@@ -6,6 +6,7 @@
 //  Copyright © 2019 Marko Dehmel-Dethloff. All rights reserved.
 //
 import CloudKit
+import UIKit
 
 class AchievementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -22,10 +23,9 @@ class AchievementViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         
         AchievementTableView.delegate = self
@@ -53,7 +53,7 @@ class AchievementViewController: UIViewController, UITableViewDelegate, UITableV
             changedSomething = false
             tempArrayAny = tempArray as [Any]
             updateDataPoints()
-        
+        // deletes the small red number on the achievementbadge 
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[4]
             tabItem.badgeValue = nil
@@ -61,12 +61,12 @@ class AchievementViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    
+    // returns the number of rows for the tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         index = 0
         return LoginViewController.achievements!.count
     }
-    
+    // creates the content for every cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AchievementTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AchievementTableViewCell
         let cell2 = AchievementTableView.dequeueReusableCell(withIdentifier: "cell5", for: indexPath) as! AchievementTableViewCell
@@ -184,7 +184,7 @@ class AchievementViewController: UIViewController, UITableViewDelegate, UITableV
             createAlert2(title: "Chose your Title.", message: "Female: die Fleißige. \nMale: der Fleißige.")
         }
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Female", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in

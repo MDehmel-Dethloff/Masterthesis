@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Login" customClass="LoginViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Login" customClass="LoginViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
         <!--Create Account-->
         <scene sceneID="Hay-Rb-u7E">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="298-gb-6tM" userLabel="Create Account" customClass="CreateAccountViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="298-gb-6tM" userLabel="Create Account" customClass="CreateAccountViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZ3-l7-bQP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,7 +228,7 @@
         <!--Home-->
         <scene sceneID="d6Q-gE-tG2">
             <objects>
-                <viewController id="zKx-ie-0YI" customClass="HomeViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zKx-ie-0YI" customClass="HomeViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9kN-xp-Guf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,7 +242,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-AT-U2U">
                                                 <rect key="frame" x="20" y="105" width="374" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP9-c3-jw1" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP9-c3-jw1" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -297,13 +297,13 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-Vx-RsR" customClass="TableSizeViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-Vx-RsR" customClass="TableSizeViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="218" width="374" height="128"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="GGJ-9X-862" customClass="HomeTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="GGJ-9X-862" customClass="HomeTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="374" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GGJ-9X-862" id="Oa5-Gy-oIr">
@@ -354,7 +354,7 @@
                                                             <outlet property="pointsLabel" destination="oeg-7e-GFw" id="DG9-4U-gRW"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="90" id="LCL-ku-Vql" customClass="HomeTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="90" id="LCL-ku-Vql" customClass="HomeTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="118" width="374" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCL-ku-Vql" id="x3Q-3D-7sY">
@@ -397,13 +397,13 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jul-IL-cvC" customClass="EventTableViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jul-IL-cvC" customClass="EventTableViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="437" width="374" height="128"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="95" id="RXj-nI-4jH" customClass="EventTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="95" id="RXj-nI-4jH" customClass="EventTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="374" height="95"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXj-nI-4jH" id="fQk-P7-Whi">
@@ -462,7 +462,7 @@
                                                             <outlet property="residentLabel" destination="3aN-i9-yub" id="Lmo-2d-24X"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell4" rowHeight="95" id="9Et-c1-MjA" customClass="EventTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell4" rowHeight="95" id="9Et-c1-MjA" customClass="EventTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="123" width="374" height="95"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Et-c1-MjA" id="5uq-aE-gOA">
@@ -544,6 +544,26 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYL-lE-2RQ">
+                                                <rect key="frame" x="20" y="250" width="374" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="03S-KX-mim"/>
+                                                    <constraint firstAttribute="height" constant="68" id="9Zo-yY-JiP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eU-nC-rvX">
+                                                <rect key="frame" x="146" y="1621" width="5" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="Jpc-Le-CaC"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Nqc-gF-oV8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -560,7 +580,9 @@
                                             <constraint firstAttribute="trailing" secondItem="TgW-xf-tkU" secondAttribute="trailing" constant="20" id="HOX-C7-H2y"/>
                                             <constraint firstItem="xVA-yR-cLf" firstAttribute="top" secondItem="DIf-Vx-RsR" secondAttribute="bottom" constant="20" id="Hy8-cf-W3p"/>
                                             <constraint firstItem="y90-AF-fD2" firstAttribute="leading" secondItem="p01-VL-4v0" secondAttribute="leading" id="K0f-9D-lDD"/>
+                                            <constraint firstItem="vYL-lE-2RQ" firstAttribute="top" secondItem="p01-VL-4v0" secondAttribute="top" constant="250" id="NpL-pM-pqy"/>
                                             <constraint firstItem="QNr-tr-bZu" firstAttribute="top" secondItem="Oh2-AT-U2U" secondAttribute="bottom" id="Ocr-UL-AFb"/>
+                                            <constraint firstItem="ATa-ve-r9U" firstAttribute="top" secondItem="2eU-nC-rvX" secondAttribute="bottom" constant="150" id="WFi-3o-Mb2"/>
                                             <constraint firstAttribute="trailing" secondItem="xVA-yR-cLf" secondAttribute="trailing" constant="20" id="WkG-fg-wtZ"/>
                                             <constraint firstItem="Oh2-AT-U2U" firstAttribute="leading" secondItem="p01-VL-4v0" secondAttribute="leading" constant="20" id="axR-dg-zxM"/>
                                             <constraint firstAttribute="trailing" secondItem="ATa-ve-r9U" secondAttribute="trailing" constant="10" id="cuf-kY-Gyz"/>
@@ -601,10 +623,12 @@
                         <outlet property="homeTableView" destination="DIf-Vx-RsR" id="57W-C4-DQn"/>
                         <outlet property="latestEventsLabel" destination="xVA-yR-cLf" id="JDT-XN-I6O"/>
                         <outlet property="latestEventsTableView" destination="jul-IL-cvC" id="Sm6-i9-Bfb"/>
+                        <outlet property="logoutLabel" destination="2eU-nC-rvX" id="XMB-Oh-4Qh"/>
                         <outlet property="placementLabel" destination="Sfr-mq-Cjq" id="80f-WA-sXh"/>
                         <outlet property="pointsLabel" destination="vXN-4o-7ld" id="xgA-af-MPD"/>
                         <outlet property="profilmImageButton" destination="tP9-c3-jw1" id="0Yl-St-SfZ"/>
                         <outlet property="roleLabel" destination="QNr-tr-bZu" id="yjJ-7J-qRU"/>
+                        <outlet property="updateLabel" destination="vYL-lE-2RQ" id="aer-KH-dgS"/>
                         <outlet property="wgLabel" destination="h1F-gQ-9S8" id="iwr-tT-s6w"/>
                         <outlet property="yourTodosLabel" destination="TgW-xf-tkU" id="zXW-Lq-hMV"/>
                         <segue destination="we1-Rs-10c" kind="presentation" identifier="SegueSelectProfilImage" id="vfs-ou-CZb"/>
@@ -641,7 +665,7 @@
         <!--Todo Table-->
         <scene sceneID="mZ9-iV-mDh">
             <objects>
-                <viewController id="oaG-K5-Ryr" userLabel="Todo Table" customClass="TodoTableViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oaG-K5-Ryr" userLabel="Todo Table" customClass="TodoTableViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDB-31-9G5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -652,13 +676,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MV4-S5-bzA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2873"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DPL-fj-9fI" customClass="EventTableSizeViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DPL-fj-9fI" customClass="EventTableSizeViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="414" height="2768"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="3yQ-DL-mhd" customClass="TodoTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="3yQ-DL-mhd" customClass="TodoTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3yQ-DL-mhd" id="SDz-bn-Yy3">
@@ -788,7 +812,7 @@
         <!--Rangliste-->
         <scene sceneID="KaI-ud-S5I">
             <objects>
-                <viewController id="Jb8-lH-vSc" customClass="LeaderBoardViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jb8-lH-vSc" customClass="LeaderBoardViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MHD-XG-v20">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -799,12 +823,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbo-yo-Mxi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2873"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="51X-jG-7Hd" customClass="EventTableSizeViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="51X-jG-7Hd" customClass="EventTableSizeViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="414" height="2773"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="140" id="6ZH-ym-3KT" customClass="LeaderBoardTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="140" id="6ZH-ym-3KT" customClass="LeaderBoardTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ZH-ym-3KT" id="3lc-UY-Fzx">
@@ -946,7 +970,7 @@
         <!--Show Events-->
         <scene sceneID="x3s-TS-jYx">
             <objects>
-                <viewController id="mXQ-ru-g3t" userLabel="Show Events" customClass="EventsViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mXQ-ru-g3t" userLabel="Show Events" customClass="EventsViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsK-ti-oXu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -957,7 +981,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOh-AM-SZC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2873"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wcy-ZU-6Pk" customClass="EventTableSizeViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wcy-ZU-6Pk" customClass="EventTableSizeViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="414" height="2773"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1003,6 +1027,16 @@
                                                     <action selector="createNewEventAction:" destination="mXQ-ru-g3t" eventType="touchUpInside" id="5wh-rS-KAg"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX7-r0-a8U">
+                                                <rect key="frame" x="100" y="350" width="127" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="68" id="Gig-n7-Usu"/>
+                                                    <constraint firstAttribute="width" constant="150" id="sOz-UH-yc4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1014,6 +1048,7 @@
                                             <constraint firstItem="f1w-w5-5rr" firstAttribute="leading" secondItem="sOh-AM-SZC" secondAttribute="leading" id="Ncq-kN-BXI"/>
                                             <constraint firstItem="Wcy-ZU-6Pk" firstAttribute="top" secondItem="f1w-w5-5rr" secondAttribute="bottom" id="QTy-te-Dfe"/>
                                             <constraint firstAttribute="trailing" secondItem="f1w-w5-5rr" secondAttribute="trailing" id="Wo9-RC-31Q"/>
+                                            <constraint firstItem="JX7-r0-a8U" firstAttribute="top" secondItem="f1w-w5-5rr" secondAttribute="bottom" constant="250" id="fu9-9Z-ltz"/>
                                             <constraint firstAttribute="trailing" secondItem="Wcy-ZU-6Pk" secondAttribute="trailing" id="tHH-nA-shZ"/>
                                         </constraints>
                                     </view>
@@ -1046,6 +1081,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="3000"/>
                     <connections>
+                        <outlet property="createGroupLabel" destination="JX7-r0-a8U" id="6ng-3e-cne"/>
                         <outlet property="eventTableView" destination="Wcy-ZU-6Pk" id="PRc-mM-teX"/>
                         <segue destination="qlz-LZ-zWn" kind="presentation" identifier="übergangEvents" id="D5Y-HC-rG4"/>
                     </connections>
@@ -1057,7 +1093,7 @@
         <!--New Event-->
         <scene sceneID="4OU-lE-f7G">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="qlz-LZ-zWn" userLabel="New Event" customClass="NewEventViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="qlz-LZ-zWn" userLabel="New Event" customClass="NewEventViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QpD-af-Hzd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1172,7 +1208,7 @@
         <!--Create Todo-->
         <scene sceneID="TcE-Hc-8Na">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="8Bt-mM-XSp" userLabel="Create Todo" customClass="CreateTodoViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8Bt-mM-XSp" userLabel="Create Todo" customClass="CreateTodoViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EmM-Fh-FcV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1316,7 +1352,7 @@
         <!--Select Icon for todo-->
         <scene sceneID="DXs-sp-FnM">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="mKr-r7-bsC" userLabel="Select Icon for todo" customClass="SelectIconForTodoViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="mKr-r7-bsC" userLabel="Select Icon for todo" customClass="SelectIconForTodoViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G1y-vQ-864">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1588,7 +1624,7 @@
         <!--Profil Image-->
         <scene sceneID="3td-7P-SqZ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="we1-Rs-10c" userLabel="Profil Image" customClass="ProfilImageViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="we1-Rs-10c" userLabel="Profil Image" customClass="ProfilImageViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eR-5K-Kyf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1612,7 +1648,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="qCb-YR-Bbw">
                                                 <rect key="frame" x="48" y="0.0" width="278" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-xr-kXF" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-xr-kXF" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1635,7 +1671,7 @@
                                                             <action selector="boy1Action:" destination="we1-Rs-10c" eventType="touchUpInside" id="Ys6-rQ-vwo"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-rg-XTe" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-rg-XTe" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="178" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1663,7 +1699,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-Rt-IyX">
                                                 <rect key="frame" x="48" y="117" width="278" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97t-nU-8s8" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97t-nU-8s8" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1686,7 +1722,7 @@
                                                             <action selector="boy3Action:" destination="we1-Rs-10c" eventType="touchUpInside" id="3u0-sB-1hP"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezy-aB-4pk" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezy-aB-4pk" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="178" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1714,7 +1750,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="xHy-wj-nFS">
                                                 <rect key="frame" x="48" y="234" width="278" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-fl-Gd8" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-fl-Gd8" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1737,7 +1773,7 @@
                                                             <action selector="boy5Action:" destination="we1-Rs-10c" eventType="touchUpInside" id="Byl-wJ-6ex"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD1-4A-Xqi" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD1-4A-Xqi" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="178" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1765,7 +1801,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="5Rm-ZX-LiY">
                                                 <rect key="frame" x="48" y="351" width="278" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWw-Kl-0Kv" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWw-Kl-0Kv" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1788,7 +1824,7 @@
                                                             <action selector="gril2Action:" destination="we1-Rs-10c" eventType="touchUpInside" id="gQz-Fk-Dhe"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq0-qf-G1l" customClass="HomeViewUIButton" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq0-qf-G1l" customClass="HomeViewUIButton" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="178" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1852,7 +1888,7 @@
         <!--Auszeichnungen-->
         <scene sceneID="UhA-jx-7rh">
             <objects>
-                <viewController id="raM-ZM-K5A" customClass="AchievementViewController" customModule="CloudKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="raM-ZM-K5A" customClass="AchievementViewController" customModule="MasterthesisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lpp-J2-IFo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="3000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1863,12 +1899,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-fG-iuU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2873"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-JM-Ud0" customClass="EventTableSizeViewController" customModule="CloudKitExample" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-JM-Ud0" customClass="EventTableSizeViewController" customModule="MasterthesisApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="414" height="2773"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="NFU-GK-MYb" customClass="AchievementTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="NFU-GK-MYb" customClass="AchievementTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFU-GK-MYb" id="v3F-Mh-alg">
@@ -1908,7 +1944,7 @@
                                                             <outlet property="cellLabel" destination="xgf-7Q-AKw" id="Fgh-i6-Lan"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell5" rowHeight="90" id="pVl-Eg-Ge5" customClass="AchievementTableViewCell" customModule="CloudKitExample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell5" rowHeight="90" id="pVl-Eg-Ge5" customClass="AchievementTableViewCell" customModule="MasterthesisApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="118" width="414" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pVl-Eg-Ge5" id="4wJ-Os-S7c">

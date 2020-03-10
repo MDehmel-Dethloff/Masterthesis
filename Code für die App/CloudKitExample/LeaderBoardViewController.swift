@@ -23,17 +23,16 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         LeaderBoardTableView.delegate = self
         LeaderBoardTableView.dataSource = self
         
         sortLeaderBoardArray()
         LeaderBoardTableView.reloadData()
-        
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Points", Array: "points")
          DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.sortLeaderBoardArray()
@@ -42,13 +41,14 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Points", Array: "points")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.sortLeaderBoardArray()
             self.LeaderBoardTableView.reloadData()
         })
     }
-
+    // determines the number of rows for the leaderboard tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         index = 0
         rank = 1
@@ -57,7 +57,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return LeaderBoardResident!.count
     }
-    
+    // creates the content for every cell of the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = LeaderBoardTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeaderBoardTableViewCell
         
@@ -92,7 +92,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String, ID: CKRecord.ID) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Befördern", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
@@ -109,6 +109,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
+    // determines the users for the leaderboard
     func getResidentForLeaderBoard() {
         
         var indexCounter: Int = 0
@@ -123,7 +124,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         LeaderBoardResident?.append(tempResident!)
         tempArray?.remove(at: indexCounter)
     }
-    
+    // sort the users according to the points which they have collected so far
     func sortLeaderBoardArray() {
         
         LeaderBoardResident?.removeAll()

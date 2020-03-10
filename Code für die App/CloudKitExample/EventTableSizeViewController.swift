@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets the size for the lower TableView in HomeViewController.swift
 class EventTableSizeViewController: UITableView {
     
     var maxHeight: CGFloat = UIScreen.main.bounds.size.height

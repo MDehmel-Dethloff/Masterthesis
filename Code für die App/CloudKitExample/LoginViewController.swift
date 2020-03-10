@@ -39,11 +39,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Residents", Array: "user")
         helpFunction.fetchData(Type: "Points", Array: "points")
         helpFunction.fetchData(Type: "Achievements", Array: "achievements")
@@ -67,14 +67,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.resignFirstResponder()
         return true
     }
+    // Set the Status Bar to light mode
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
+    // Perfoms a Segue when this button is clicked
     @IBAction func createAccountAction(_ sender: UIButton) {
         userNameTextField.text = ""
         passwordTextField.text = ""
         performSegue(withIdentifier: "übergang", sender: self)
     }
+    // Performs the login action when this button is clicked
     @IBAction func loginAction(_ sender: UIButton) {
         
         let username = userNameTextField.text as NSString?
@@ -100,7 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             createAlert2(title: "Das Einloggen ist fehlgeschlagen!", message: "Bitte prüfe deine Eingaben.")
         }
     }
-    // Alert erstellen mit Action
+    // Create an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets the properties for the Cells used in the TableView in TodoTableViewController.swift
 class TodoTableViewCell: UITableViewCell {
 
     

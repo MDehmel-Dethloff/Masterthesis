@@ -22,12 +22,13 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Residents", Array: "user")
+        
         passwordTextField.isSecureTextEntry = true
         repeatPasswordTextField.isSecureTextEntry = true
         
@@ -46,14 +47,14 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         repeatPasswordTextField.resignFirstResponder()
         return true
     }
-    
+    // Performs a Segue if this button gets clicked
     @IBAction func backAction(_ sender: UIButton) {
         userNameTextField.text = ""
         passwordTextField.text = ""
         repeatPasswordTextField.text = ""
         dismiss(animated: true, completion: nil)
     }
-    
+    // Performs a creat action if this button gets clicked
     @IBAction func createAction(_ sender: UIButton) {
         
         if passwordTextField.text != repeatPasswordTextField.text {
@@ -78,7 +79,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         saveData()
         createAlert2(title: "Account wurde erstellt.", message: "")
     }
-    
+    // Saves the data in the DB
     func saveData() {
         
         let ResidentRecordID = CKRecord.ID(recordName: "\(userNameTextField.text!)")
@@ -104,7 +105,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
@@ -114,7 +115,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // Alert erstellen ohne Action
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

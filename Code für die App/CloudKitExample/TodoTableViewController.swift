@@ -22,10 +22,9 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
     override func viewDidLoad() {
         questsForResident?.removeAll()
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         selectedQuests()
         todoTableView.delegate = self
@@ -40,12 +39,12 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
 
     }
     
-    // Anzahl der Zeilen
+    // returns the number of lines for the tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         index = 0
         return questsForResident!.count
     }
-    // Inhalt der Zeilen
+    // returns the content for every cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = todoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoTableViewCell
@@ -61,17 +60,17 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
         return cell
     }
     
-    
+    // Performs a Segue to the create-Todo-screen
     @IBAction func createTodoAction(_ sender: UIButton) {
         performSegue(withIdentifier: "übergangTodo", sender: self)
     }
     
-    // Updatet the selected todo
+    // Updates the selected todo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         createAlert2(title: "\(questsForResident![indexPath.row].value(forKey: "name")!)", message: "\(questsForResident![indexPath.row].value(forKey: "description")!)", ID: questsForResident![indexPath.row].recordID)
     }
-    // Quest array with wg and resident == none constrains
+    // Updates the content of the quest-array with "wg" and "resident" == none
     func selectedQuests() {
         
         if LoginViewController.quests?.count == 0 {
@@ -85,7 +84,7 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
         }
         self.todoTableView.reloadData()
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String, ID: CKRecord.ID) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let home = HomeViewController()
@@ -105,7 +104,7 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // Alert erstellen ohne Action
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -133,6 +132,7 @@ class TodoTableViewController: UIViewController,UITableViewDelegate, UITableView
             }
         }
     }
+    // updates the tableview
     func refreshTable() {
         
         if CreateTodoViewController.todoWasCreated == true {

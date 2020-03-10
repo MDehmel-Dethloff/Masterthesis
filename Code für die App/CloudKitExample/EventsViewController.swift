@@ -49,15 +49,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     static var updateEventsFinished = false
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var createGroupLabel: UILabel!
+    
     
     let helpFunction = HilfsFunktionen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         eventTableView.delegate = self
         eventTableView.dataSource = self
@@ -68,37 +69,56 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         eventTableDescription()
+        // If this view is shown for the first time, the tableview for the groups gets build
         if starting {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
                 self.starting = false
                 self.indexB = 0
                 EventsViewController.updateEventsFinished = false
+                // Fetches required Data from DB
                 self.helpFunction.fetchData(Type: "Events", Array: "events")
                 while(true) {
                     if EventsViewController.updateEventsFinished == true {
                         self.getIndexForTableView()
                         self.index = 0
                         self.eventTableView.reloadData()
-                        ProgressHUD.dismiss()
+                        
                         return
                     }
                 }
             })
+        // else: update the tableview
         } else {
-            
-            //self.helpFunction.fetchData(Type: "Events", Array: "events")
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                 self.indexB = 0
                 EventsViewController.updateEventsFinished = false
+                // Fetches required Data from DB
                 self.helpFunction.fetchData(Type: "Events", Array: "events")
             })
+            // if the user created a new group: show an animation for creating a group so the user knows that he has to wait for a few seconds
+            if NewEventViewController.eventWasCreated == true {
+                self.createGroupLabel.center = self.view.center
+                self.createGroupLabel.center.x = self.view.center.x
+                self.createGroupLabel.center.y = self.view.center.y
+                
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+                self.createGroupLabel.backgroundColor = UIColor(patternImage: UIImage(named: "Gruppe erstellen1")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                self.createGroupLabel.backgroundColor = UIColor(patternImage: UIImage(named: "Gruppe erstellen2")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                self.createGroupLabel.backgroundColor = UIColor(patternImage: UIImage(named: "Gruppe erstellen3")!)
+            })
+            }
+            // when the new group is created, the user automatically joins this group
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                 while(true) {
                     if EventsViewController.updateEventsFinished == true {
                         self.getIndexForTableView()
                         self.index = 0
                         self.eventTableView.reloadData()
-                        ProgressHUD.dismiss()
+                        self.createGroupLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
                         if NewEventViewController.eventWasCreated == true {
                             self.createAlert(title: "Du bist der Gruppe \(LoginViewController.wg) beigetreten", message: "")
                             NewEventViewController.eventWasCreated = false
@@ -109,13 +129,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
     }
-    
+    // Performs a Segue if this button gets clicked
     @IBAction func createNewEventAction(_ sender: UIButton) {
         performSegue(withIdentifier: "übergangEvents", sender: self)
     }
     
     
-    // Update data in ResidentDB
+    // Updates data in ResidentDB, if the user has joined a new group
     func updateData(index: Int) {
         
         publicDB.fetch(withRecordID: LoginViewController.resident as! CKRecord.ID) { (record, error) in
@@ -137,17 +157,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    // Erstellen der Header
+    // creates the tableview's header
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return indexHeaderArray[section]
     }
     
-    // Anzahl der Sektionen
+    // returns the number of sections of the tableview
     func numberOfSections(in tableView: UITableView) -> Int {
         return indexHeaderArray.count
     }
-    // Anzahl der Zeilen
+    // returns the umber of lines for every section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == indexB && indexHeaderArray[indexB] == "A" {
@@ -255,7 +275,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         return 0
     }
-    // Inhalt der Zeilen
+    // Creates the content of every cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = eventTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -263,7 +283,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         index += 1
         return cell
     }
-    // Action when click on cell
+    // Performs an action if a cell gets clicked
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var indexForItem = indexPath.row
@@ -273,7 +293,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         alertWithTF(title: "Bitte gib das Passwort für die Gruppe ein.", message: "", indexI: indexForItem)
     }
     
-    // Alert erstellen ohne Action
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -281,6 +301,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
+    // Creates an alert with a textfield
     func alertWithTF(title: String, message: String, indexI: Int) {
         //Step : 1
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -321,6 +342,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             createAlert(title: "Falsches Passwort!", message: "")
         }
     }
+    // determines which index Header is neeeded
     func getIndexForTableView() {
         
         A = 0
@@ -500,7 +522,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    
+    // Determines the index of the selected Item at the Tableview
     func getIndexForSelectedItem(numberOfSection: Int, numberOfItemInSection: Int) -> Int{
         var tempCounter = 0
         for index in 0...numberOfSection {
@@ -509,6 +531,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tempCounter += numberOfItemInSection
         return tempCounter
     }
+    // Creates a description if the user dosen't joined a group yet
     func eventTableDescription() {
         
         if LoginViewController.wg == "none" {

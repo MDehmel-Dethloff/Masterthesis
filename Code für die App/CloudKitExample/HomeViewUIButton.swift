@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets the properties for buttons used for the app
 @IBDesignable
 class HomeViewUIButton: UIButton {
     

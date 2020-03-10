@@ -175,13 +175,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.updateLabel.center.y = self.view.center.y
             // Creates an animation if the app is loading some content
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
-                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "lädt1")!)
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren1")!)
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "lädt2")!)
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren2")!)
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
-                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "lädt3")!)
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren3")!)
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
                 self.updateLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)

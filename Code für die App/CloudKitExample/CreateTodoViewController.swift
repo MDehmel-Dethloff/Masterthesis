@@ -22,17 +22,17 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
-        }
+        } 
         self.nameTextField.delegate = self
         self.pointsTextField.delegate = self
         self.descriptionTextField.delegate = self
         
         iconButton.setImage(UIImage(named: CreateTodoViewController.imageForTodo), for: .normal)
     }
+    // Set the Status Bar to light mode
     override var preferredStatusBarStyle : UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent
@@ -51,6 +51,7 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
         descriptionTextField.resignFirstResponder()
         return true
     }
+    // Create a new Todo if the user meets the conditions
     @IBAction func createAction(_ sender: UIButton) {
         
         if LoginViewController.wg == "none" {
@@ -68,14 +69,14 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         iconButton.setImage(UIImage(named: CreateTodoViewController.imageForTodo), for: .normal)
     }
-
+    // Performs a Segue to the Todo-screen
     @IBAction func backAction(_ sender: UIButton) {
         nameTextField.text = ""
         pointsTextField.text = ""
         descriptionTextField.text = ""
         dismiss(animated: true, completion: nil)
     }
-    
+    // Performs a Segue to the Icon-selection-screen for todos
     @IBAction func selectIconForTodoAction(_ sender: UIButton) {
         performSegue(withIdentifier: "selectIconTodoSegue", sender: self)
     }
@@ -84,7 +85,7 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "selectIconTodoSegue", sender: self)
     }
     
-    // Alert erstellen ohne Action
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -92,7 +93,7 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
@@ -102,7 +103,7 @@ class CreateTodoViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // save data in QuestDB with correct wg
+    // save data in QuestDB
     func saveData() {
         
         let dateFormatter : DateFormatter = DateFormatter()

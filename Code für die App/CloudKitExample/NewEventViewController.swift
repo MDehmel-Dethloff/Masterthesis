@@ -35,17 +35,18 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Events", Array: "events")
         
         self.eventNameTextField.delegate = self
         self.passwordTextField.delegate = self
         self.repeatPasswordTextField.delegate = self
     }
+    // Set the Status Bar to light mode
     override var preferredStatusBarStyle : UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent
@@ -65,6 +66,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    // Creates a new group
     @IBAction func createAction(_ sender: UIButton) {
         
         if passwordTextField.text != repeatPasswordTextField.text {
@@ -97,10 +99,9 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         LoginViewController.wg = eventName! as String
         updateData()
         dismiss(animated: true, completion: nil)
-        ProgressHUD.show("Gruppe erstellen")
-    }
+        }
 
-    
+    // Performs a Segue if this button gets clicked
     @IBAction func backAction(_ sender: UIButton) {
         eventNameTextField.text = ""
         passwordTextField.text = ""
@@ -128,7 +129,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
@@ -138,7 +139,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // Alert erstellen ohne Action
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

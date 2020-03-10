@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD27D9B2230C196A00658856 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD27D9AF230C196A00658856 /* ProgressHUD.bundle */; };
-		AD27D9B3230C196A00658856 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD27D9B1230C196A00658856 /* ProgressHUD.m */; };
 		AD3B95A522F315290019EFC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B95A422F315290019EFC7 /* LoginViewController.swift */; };
 		AD3B95A722F31B710019EFC7 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B95A622F31B710019EFC7 /* CreateAccountViewController.swift */; };
 		AD3B95A922F44C220019EFC7 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B95A822F44C220019EFC7 /* NewEventViewController.swift */; };
@@ -23,7 +21,6 @@
 		AD5CAF1722FD803E00908895 /* EventTableSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CAF1622FD803E00908895 /* EventTableSizeViewController.swift */; };
 		AD73AC2122FB131F00CE4241 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73AC2022FB131F00CE4241 /* HomeViewController.swift */; };
 		AD97E1EA22F04A6A005B1EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97E1E922F04A6A005B1EDF /* AppDelegate.swift */; };
-		AD97E1EC22F04A6A005B1EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97E1EB22F04A6A005B1EDF /* ViewController.swift */; };
 		AD97E1EF22F04A6A005B1EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD97E1ED22F04A6A005B1EDF /* Main.storyboard */; };
 		AD97E1F122F04A6D005B1EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD97E1F022F04A6D005B1EDF /* Assets.xcassets */; };
 		AD97E1F422F04A6D005B1EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD97E1F222F04A6D005B1EDF /* LaunchScreen.storyboard */; };
@@ -40,25 +37,21 @@
 
 /* Begin PBXFileReference section */
 		AD27D9AE230C196900658856 /* CloudKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		AD27D9AF230C196A00658856 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = "../../../Downloads/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.bundle"; sourceTree = "<group>"; };
-		AD27D9B0230C196A00658856 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = "../../../Downloads/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.h"; sourceTree = "<group>"; };
-		AD27D9B1230C196A00658856 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = "../../../Downloads/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.m"; sourceTree = "<group>"; };
 		AD3B95A422F315290019EFC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AD3B95A622F31B710019EFC7 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		AD3B95A822F44C220019EFC7 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		AD3B95AA22F453110019EFC7 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		AD4E85F7230575010092D1D3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		AD4E85F923058FE80092D1D3 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		AD4E85FB2305A0B70092D1D3 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
-		AD4E85FD2305A8C00092D1D3 /* LeaderBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewCell.swift; sourceTree = "<group>"; };
+		AD4E85F7230575010092D1D3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = ../CloudKitExample/HomeTableViewCell.swift; sourceTree = "<group>"; };
+		AD4E85F923058FE80092D1D3 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../CloudKitExample/EventTableViewCell.swift; sourceTree = "<group>"; };
+		AD4E85FB2305A0B70092D1D3 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoTableViewCell.swift; path = ../CloudKitExample/TodoTableViewCell.swift; sourceTree = "<group>"; };
+		AD4E85FD2305A8C00092D1D3 /* LeaderBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableViewCell.swift; path = ../CloudKitExample/LeaderBoardTableViewCell.swift; sourceTree = "<group>"; };
 		AD4E85FF2305A9290092D1D3 /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
-		AD5A127C22FC2C160097D7F6 /* TableSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSizeViewController.swift; sourceTree = "<group>"; };
-		AD5A127E22FC2C4A0097D7F6 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
-		AD5CAF1622FD803E00908895 /* EventTableSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableSizeViewController.swift; sourceTree = "<group>"; };
+		AD5A127C22FC2C160097D7F6 /* TableSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableSizeViewController.swift; path = ../CloudKitExample/TableSizeViewController.swift; sourceTree = "<group>"; };
+		AD5A127E22FC2C4A0097D7F6 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventTableViewController.swift; path = ../CloudKitExample/EventTableViewController.swift; sourceTree = "<group>"; };
+		AD5CAF1622FD803E00908895 /* EventTableSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventTableSizeViewController.swift; path = ../CloudKitExample/EventTableSizeViewController.swift; sourceTree = "<group>"; };
 		AD73AC2022FB131F00CE4241 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AD97E1E622F04A6A005B1EDF /* CloudKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD97E1E622F04A6A005B1EDF /* MasterthesisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterthesisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD97E1E922F04A6A005B1EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD97E1EB22F04A6A005B1EDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD97E1EE22F04A6A005B1EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD97E1F022F04A6D005B1EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD97E1F322F04A6D005B1EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,10 +59,10 @@
 		AD97E1FB22F04AC1005B1EDF /* CloudKitExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitExample.entitlements; sourceTree = "<group>"; };
 		AD97E20322F052E7005B1EDF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		ADB76294230EA1BE0044B8EA /* AchievementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewController.swift; sourceTree = "<group>"; };
-		ADB76296230EADFC0044B8EA /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
+		ADB76296230EADFC0044B8EA /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementTableViewCell.swift; path = ../CloudKitExample/AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		ADC9B23F231D2AE000B3FAD4 /* SelectIconForTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconForTodoViewController.swift; sourceTree = "<group>"; };
 		ADCC568023041A43007378AA /* HilfsFunktionen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilfsFunktionen.swift; sourceTree = "<group>"; };
-		ADEE84F6230AE67E00A2D053 /* HomeViewUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUIButton.swift; sourceTree = "<group>"; };
+		ADEE84F6230AE67E00A2D053 /* HomeViewUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewUIButton.swift; path = ../CloudKitExample/HomeViewUIButton.swift; sourceTree = "<group>"; };
 		ADEE84F8230AF38B00A2D053 /* ProfilImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilImageViewController.swift; sourceTree = "<group>"; };
 		ADF3BBF222F58206009B2DBC /* CreateTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoViewController.swift; sourceTree = "<group>"; };
 		ADF3BBF422F59450009B2DBC /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
@@ -87,9 +80,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD8423C22416A9050044F68D /* Auxiliary Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A127C22FC2C160097D7F6 /* TableSizeViewController.swift */,
+				ADEE84F6230AE67E00A2D053 /* HomeViewUIButton.swift */,
+				AD5CAF1622FD803E00908895 /* EventTableSizeViewController.swift */,
+				AD4E85FD2305A8C00092D1D3 /* LeaderBoardTableViewCell.swift */,
+				AD4E85F7230575010092D1D3 /* HomeTableViewCell.swift */,
+				AD4E85FB2305A0B70092D1D3 /* TodoTableViewCell.swift */,
+				AD5A127E22FC2C4A0097D7F6 /* EventTableViewController.swift */,
+				ADB76296230EADFC0044B8EA /* AchievementTableViewCell.swift */,
+				AD4E85F923058FE80092D1D3 /* EventTableViewCell.swift */,
+			);
+			path = "Auxiliary Files";
+			sourceTree = "<group>";
+		};
 		AD97E1DD22F04A6A005B1EDF = {
 			isa = PBXGroup;
 			children = (
+				AD8423C22416A9050044F68D /* Auxiliary Files */,
 				AD97E1E822F04A6A005B1EDF /* CloudKitExample */,
 				AD97E1E722F04A6A005B1EDF /* Products */,
 				AD97E1FC22F04AD2005B1EDF /* Frameworks */,
@@ -99,7 +109,7 @@
 		AD97E1E722F04A6A005B1EDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD97E1E622F04A6A005B1EDF /* CloudKitExample.app */,
+				AD97E1E622F04A6A005B1EDF /* MasterthesisApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,34 +119,21 @@
 			children = (
 				AD97E1FB22F04AC1005B1EDF /* CloudKitExample.entitlements */,
 				AD97E1E922F04A6A005B1EDF /* AppDelegate.swift */,
-				AD97E1EB22F04A6A005B1EDF /* ViewController.swift */,
 				AD3B95A422F315290019EFC7 /* LoginViewController.swift */,
 				AD3B95A622F31B710019EFC7 /* CreateAccountViewController.swift */,
 				AD3B95A822F44C220019EFC7 /* NewEventViewController.swift */,
 				AD3B95AA22F453110019EFC7 /* EventsViewController.swift */,
 				ADF3BBF222F58206009B2DBC /* CreateTodoViewController.swift */,
 				ADF3BBF422F59450009B2DBC /* TodoTableViewController.swift */,
-				AD5A127C22FC2C160097D7F6 /* TableSizeViewController.swift */,
-				AD5A127E22FC2C4A0097D7F6 /* EventTableViewController.swift */,
-				AD5CAF1622FD803E00908895 /* EventTableSizeViewController.swift */,
 				AD73AC2022FB131F00CE4241 /* HomeViewController.swift */,
 				ADCC568023041A43007378AA /* HilfsFunktionen.swift */,
 				AD97E1ED22F04A6A005B1EDF /* Main.storyboard */,
 				AD97E1F022F04A6D005B1EDF /* Assets.xcassets */,
 				AD97E1F222F04A6D005B1EDF /* LaunchScreen.storyboard */,
 				AD97E1F522F04A6D005B1EDF /* Info.plist */,
-				AD4E85F7230575010092D1D3 /* HomeTableViewCell.swift */,
-				AD4E85F923058FE80092D1D3 /* EventTableViewCell.swift */,
-				AD4E85FB2305A0B70092D1D3 /* TodoTableViewCell.swift */,
-				AD4E85FD2305A8C00092D1D3 /* LeaderBoardTableViewCell.swift */,
 				AD4E85FF2305A9290092D1D3 /* LeaderBoardViewController.swift */,
-				ADEE84F6230AE67E00A2D053 /* HomeViewUIButton.swift */,
 				ADEE84F8230AF38B00A2D053 /* ProfilImageViewController.swift */,
-				ADB76296230EADFC0044B8EA /* AchievementTableViewCell.swift */,
 				ADB76294230EA1BE0044B8EA /* AchievementViewController.swift */,
-				AD27D9AF230C196A00658856 /* ProgressHUD.bundle */,
-				AD27D9B0230C196A00658856 /* ProgressHUD.h */,
-				AD27D9B1230C196A00658856 /* ProgressHUD.m */,
 				AD27D9AE230C196900658856 /* CloudKitExample-Bridging-Header.h */,
 				ADC9B23F231D2AE000B3FAD4 /* SelectIconForTodoViewController.swift */,
 			);
@@ -154,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD97E1E522F04A6A005B1EDF /* CloudKitExample */ = {
+		AD97E1E522F04A6A005B1EDF /* MasterthesisApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD97E1F822F04A6D005B1EDF /* Build configuration list for PBXNativeTarget "CloudKitExample" */;
+			buildConfigurationList = AD97E1F822F04A6D005B1EDF /* Build configuration list for PBXNativeTarget "MasterthesisApp" */;
 			buildPhases = (
 				AD97E1E222F04A6A005B1EDF /* Sources */,
 				AD97E1E322F04A6A005B1EDF /* Frameworks */,
@@ -166,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = CloudKitExample;
+			name = MasterthesisApp;
 			productName = CloudKitExample;
-			productReference = AD97E1E622F04A6A005B1EDF /* CloudKitExample.app */;
+			productReference = AD97E1E622F04A6A005B1EDF /* MasterthesisApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD97E1E122F04A6A005B1EDF /* Build configuration list for PBXProject "CloudKitExample" */;
+			buildConfigurationList = AD97E1E122F04A6A005B1EDF /* Build configuration list for PBXProject "MasterthesisApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -208,7 +205,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD97E1E522F04A6A005B1EDF /* CloudKitExample */,
+				AD97E1E522F04A6A005B1EDF /* MasterthesisApp */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +215,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD27D9B2230C196A00658856 /* ProgressHUD.bundle in Resources */,
 				AD97E1F422F04A6D005B1EDF /* LaunchScreen.storyboard in Resources */,
 				AD97E1F122F04A6D005B1EDF /* Assets.xcassets in Resources */,
 				AD97E1EF22F04A6A005B1EDF /* Main.storyboard in Resources */,
@@ -236,7 +232,6 @@
 				AD5A127F22FC2C4B0097D7F6 /* EventTableViewController.swift in Sources */,
 				AD3B95A722F31B710019EFC7 /* CreateAccountViewController.swift in Sources */,
 				AD4E85F8230575010092D1D3 /* HomeTableViewCell.swift in Sources */,
-				AD27D9B3230C196A00658856 /* ProgressHUD.m in Sources */,
 				ADC9B240231D2AE000B3FAD4 /* SelectIconForTodoViewController.swift in Sources */,
 				AD4E85FA23058FE80092D1D3 /* EventTableViewCell.swift in Sources */,
 				ADEE84F7230AE67E00A2D053 /* HomeViewUIButton.swift in Sources */,
@@ -246,7 +241,6 @@
 				AD3B95A522F315290019EFC7 /* LoginViewController.swift in Sources */,
 				AD3B95A922F44C220019EFC7 /* NewEventViewController.swift in Sources */,
 				AD5A127D22FC2C170097D7F6 /* TableSizeViewController.swift in Sources */,
-				AD97E1EC22F04A6A005B1EDF /* ViewController.swift in Sources */,
 				ADEE84F9230AF38B00A2D053 /* ProfilImageViewController.swift in Sources */,
 				AD73AC2122FB131F00CE4241 /* HomeViewController.swift in Sources */,
 				AD4E85FC2305A0B70092D1D3 /* TodoTableViewCell.swift in Sources */,
@@ -413,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mdd.CloudKitExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MasterthesisApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudKitExample/CloudKitExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -438,7 +432,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mdd.CloudKitExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MasterthesisApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudKitExample/CloudKitExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -449,7 +443,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD97E1E122F04A6A005B1EDF /* Build configuration list for PBXProject "CloudKitExample" */ = {
+		AD97E1E122F04A6A005B1EDF /* Build configuration list for PBXProject "MasterthesisApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD97E1F622F04A6D005B1EDF /* Debug */,
@@ -458,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD97E1F822F04A6D005B1EDF /* Build configuration list for PBXNativeTarget "CloudKitExample" */ = {
+		AD97E1F822F04A6D005B1EDF /* Build configuration list for PBXNativeTarget "MasterthesisApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD97E1F922F04A6D005B1EDF /* Debug */,

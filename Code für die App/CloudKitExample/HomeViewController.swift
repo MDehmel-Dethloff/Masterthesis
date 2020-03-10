@@ -37,6 +37,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var placementLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
+    @IBOutlet weak var updateLabel: UILabel!
+    @IBOutlet weak var logoutLabel: UILabel!
     
     
     @IBAction func profilButton(_ sender: UIButton) {
@@ -53,10 +55,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        // Set the UI to light mode
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
         }
         homeTableView.delegate = self
         homeTableView.dataSource = self
@@ -79,7 +80,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             yourTodosLabel.text = "Deine Todos:"
             latestEventsLabel.text = "Neuste Ereignisse:"
         }
-        
+        // creates a small red number on the achievementbadge if needed
         if let tabItems = tabBarController?.tabBar.items {
             
             let tabItem = tabItems[3]
@@ -96,7 +97,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             if tempArray.contains("admin"){
                 NewEventViewController.admin = true
-                print("zzzich war hier101010")
             }
             if !(tempArray.contains("a1")) && Int(LoginViewController.todoCounter)! > 0 {
                 tempCounter += 1
@@ -126,12 +126,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
+        // Fetches required Data from DB
         helpFunction.fetchData(Type: "Residents", Array: "users")
         helpFunction.fetchData(Type: "Quests", Array: "quests")
         helpFunction.fetchData(Type: "Points", Array: "points")
         helpFunction.fetchData(Type: "Events", Array: "events")
         while(true) {
-            print("ich war hier in while 1")
+            print("while 1")
             if HomeViewController.fetchDataQuestFinished == true && HomeViewController.fetchDataPointsFinished == true{
                 setResidentScore()
                 createLatestEventArray()
@@ -149,10 +150,42 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         profilmImageButton.setImage(UIImage(named: "\(LoginViewController.image)"), for: .normal)
         if TodoTableViewController.todoSelected == true {
-            ProgressHUD.show("aktualisieren")
+            self.updateLabel.center = self.view.center
+            self.updateLabel.center.x = self.view.center.x
+            self.updateLabel.center.y = self.view.center.y
+            // Creates an animation if the app is updating the content
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren1")!)
+
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren2")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren3")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+                self.updateLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+            })
         }
         if HomeViewController.wgHasChanged == true {
-            ProgressHUD.show("lädt")
+            
+            self.updateLabel.center = self.view.center
+            self.updateLabel.center.x = self.view.center.x
+            self.updateLabel.center.y = self.view.center.y
+            // Creates an animation if the app is loading some content
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren1")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren2")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren3")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+                self.updateLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+            })
         }
         if LoginViewController.wg == "none"{
             yourTodosLabel.text = "Deine Todos:"
@@ -172,21 +205,36 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     
-    // Log out Button
+    // Perfomrs a logout action if this button gets clicked
     @IBAction func LogOutAction(_ sender: UIButton) {
-        ProgressHUD.show("ausloggen")
+        // Creates an animation if the user is logging out
+        self.logoutLabel.center = self.view.center
+        self.logoutLabel.center.x = self.view.center.x
+        self.logoutLabel.center.y = self.view.frame.maxY - 160
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+            self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "ausloggen1")!)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "ausloggen2")!)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+            self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "ausloggen3")!)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+            self.logoutLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+        })
         loggedOut = true
         NewEventViewController.admin = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
             self.dismiss(animated: true, completion: nil)
-            ProgressHUD.dismiss()
         })
     }
     // Leave event Button
     @IBAction func LeaveEventAction(_ sender: UIButton) {
         createAlert3(title: "Möchtest du die Gruppe verlassen?", message: "")
     }
-    // Anzahl der Zeilen
+    // Returns the number of rows for the two tableviewes
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         index = 0
         index2 = 0
@@ -205,7 +253,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             return HomeViewController.latestEventsForResident!.count
         }
     }
-    // Inhalt der Zeilen
+    // Creates the content for every cell in the two tableviews
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(tableView == homeTableView) {
@@ -260,7 +308,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return UITableViewCell()
     }
-    // Updatet the selected todo
+    // Updates the selected todo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(tableView == homeTableView && LoginViewController.questsForResident!.count > 0) {
             createAlert2(title: "\(LoginViewController.questsForResident![indexPath.row].value(forKey: "name")!)", message: "\(LoginViewController.questsForResident![indexPath.row].value(forKey: "description")!)", ID: LoginViewController.questsForResident![indexPath.row].recordID)
@@ -288,7 +336,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             roleLabel.text = "User"
         }
     }
-    
+    // determines the quests which should be shown for the user
     func selectQuestsForResident() {
         LoginViewController.questsForResident?.removeAll()
         if(LoginViewController.quests?.count == 0) {
@@ -303,11 +351,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    // Alert erstellen mit Action
+    // Creates an alert with an action
     func createAlert2(title: String, message: String, ID: CKRecord.ID) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Erledigt", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-            ProgressHUD.show("aktualisieren")
+            // Creates an animation if the app is updating the content
+            self.updateLabel.center = self.view.center
+            self.updateLabel.center.x = self.view.center.x
+            self.updateLabel.center.y = self.view.center.y
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren1")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren2")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                self.updateLabel.backgroundColor = UIColor(patternImage: UIImage(named: "aktualisieren3")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+                self.updateLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+            })
             LoginViewController.todoCounter = "\(Int(LoginViewController.todoCounter)! + 1)"
             self.updateResidentFinished = false
             self.updateQuestFinished = false
@@ -316,7 +379,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.updateDataPoints(IDQuest: ID)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                 while(true) {
-                    print("ich war hier in while 2")
+                    print("while 2")
                     if (self.updateResidentFinished == true && self.updateQuestFinished == true){
                         self.helpFunction.fetchData(Type: "Quests", Array: "quests")
                         self.refreshHomeTable()
@@ -324,7 +387,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
                 if self.loggedOut == false {
-                    ProgressHUD.dismiss()
                 }
             })
         }
@@ -334,11 +396,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.black
     }
-    // Alert erstellen mit Action für Leave Event
+    // Creates an alert with an action
     func createAlert3(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Gruppe verlassen", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-            ProgressHUD.show("Gruppe verlassen")
+            // Creates an animation if the user is leaving a group
+            
+            self.logoutLabel.center = self.view.center
+            self.logoutLabel.center.x = self.view.center.x
+            self.logoutLabel.center.y = self.view.frame.maxY - 200
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.0, execute: {
+                self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "gruppe verlassen1")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "gruppe verlassen2")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                self.logoutLabel.backgroundColor = UIColor(patternImage: UIImage(named: "gruppe verlassen3")!)
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+                self.logoutLabel.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+            })
             self.deleteData()
             LoginViewController.wg = "none"
             self.updateDataResidents()
@@ -371,12 +450,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 record.setValue("\(tempPoints)", forKey: "score")
                 record.setValue("\(LoginViewController.todoCounter)", forKey: "todoCounter")
-                print("ich war hier")
                 self.updateResidentFinished = true
                 LoginViewController.pointsResident = tempPoints
                 self.publicDB.save(record) { _, error in
                     if error != nil{
-                        print("ich war hier in error")
+                        print("error")
                         return
                     } else {
                         print("hat geklappt")
@@ -419,15 +497,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return 0
     }
+    // Updates the first tableview
     func refreshHomeTable() {
-        print("zzzz \(NewEventViewController.admin)")
         if NewEventViewController.admin == true {
             NewEventViewController.admin = true
         } else {
             NewEventViewController.admin = false
         }
-        
-        print("ich war hier am start1")
         HomeViewController.fetchDataResidentFinished = false
         HomeViewController.fetchDataQuestFinished = false
         HomeViewController.fetchDataPointsFinished = false
@@ -436,7 +512,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         LoginViewController.achievementCounter = "0"
         
         if let tabItems = tabBarController?.tabBar.items {
-            print("ich war hier am start2")
             let tabItem = tabItems[3]
             var tempCounter = 0
             
@@ -490,12 +565,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.setResidentScore()
             self.showResidentInformation()
             
-            
+            // Fetches required Data from DB
             self.helpFunction.fetchData(Type: "Residents", Array: "user")
             self.helpFunction.fetchData(Type: "Quests", Array: "quests")
             self.helpFunction.fetchData(Type: "Points", Array: "points")
             while(true) {
-                print("ich war hier in while 3")
+                print("while 3")
                 if HomeViewController.fetchDataResidentFinished == true && HomeViewController.fetchDataPointsFinished == true {
                     self.setResidentScore()
                     self.showResidentInformation()
@@ -503,17 +578,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             while(true) {
-                print("ich war hier in while 4")
+                print("while 4")
                 if HomeViewController.fetchDataQuestFinished == true {
-                    print("ich war hier in while4.4")
+                    print("while 4")
                     self.createLatestEventArray()
                     self.selectQuestsForResident()
                     if self.updateSelectedQuestForUserFinished == true {
-                        print("ich war hier in while 4.55")
+                        print("while 4")
                         self.homeTableView.reloadData()
                         self.latestEventsTableView.reloadData()
                         if self.loggedOut == false {
-                            ProgressHUD.dismiss()
                         }
                         
                         return
@@ -522,12 +596,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         })
-        if loggedOut == false{
-            ProgressHUD.dismiss()
-        }
-        
     }
-    // Holt die neuste Quest aus dem QuestArray und hängt es dem ResidentQuestarray an. löscht die quests aus dem tempArray
+    // Fetches the latest quest from the questarray and append them to the residentquestarray.
     func getlatestElement() {
         
         if tempEventArray!.isEmpty {
@@ -547,6 +617,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tempEventArray?.remove(at: indexcounter)
         counter += 1
     }
+    // creates an array with the 7 latest events that happend in the user's group
     func createLatestEventArray() {
         HomeViewController.latestEventsForResident?.removeAll()
         tempEventArray?.removeAll()
@@ -558,13 +629,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             while (counter < 6) {
-                print("ich war hier in while 5")
+                print("while 5")
                 getlatestElement()
             }
             self.updateLatestEventArrayFinished = true
             counter = 0
         }
     }
+    // update the score and todocounter in PointsDB
     func setResidentPoints() {
         LoginViewController.pointsResident = "-1"
         if LoginViewController.points?.count == 0 {
@@ -585,7 +657,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    // Update data in PointsDB
+    // Update image in PointsDB
     func updateDataInPointsDB(update: String) {
         
         publicDB.fetch(withRecordID: HomeViewController.pointsID as! CKRecord.ID) { (record, error) in
@@ -636,6 +708,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    // determines the current score of the user
     func setResidentScore() {
         
         var tempArray: [CKRecord]? = []
@@ -660,28 +733,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             LoginViewController.rankResident = String(tempRank)
         }
     }
+    // determines if the user is a normal user or an admin
     func setRole() {
         for index in 0...LoginViewController.points!.count-1 {
             if LoginViewController.points![index].recordID == HomeViewController.pointsID as! CKRecord.ID{
                 tempArray = LoginViewController.points![index].value(forKey: "achievements") as! [String]
             }
         }
-        print("zzz \(self.tempArray)")
-        print("zzz \(NewEventViewController.admin)")
+        print("\(self.tempArray)")
+        print("\(NewEventViewController.admin)")
         if self.tempArray.contains("admin") {
-            print("zzz ich war hier in 1111111")
             NewEventViewController.admin = true
         }
         LoginViewController.achievementCounter = "\(self.tempArray.count)"
     }
-    
+    // Creates an info-alert if the user isn't part of group
     func showTodoInfo() {
         if homeTableIsEmpty && LoginViewController.todoCounter == "0" && LoginViewController.wg != "none" && LoginViewController.showTodoInfo == true{
             LoginViewController.showTodoInfo = false
             createAlert(title: "Du hast keine Todos ausgewählt", message: "Um ein Todo auszuwählen, musst du auf den Todo-Reiter wechseln und dort ein neues Todo anlegen oder ein bereits bestehendes Todo auswählen. Todos können ausgewählt werden, indem man auf sie klickt.")
         }
     }
-    
+    // Creates an alert without an action
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

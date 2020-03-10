@@ -44,14 +44,12 @@ class HilfsFunktionen: UIViewController {
             if Array == "achievements" {
                 LoginViewController.achievements = records
             }
-           
-            //LoginViewController.users = records
             if (LoginViewController.users!.isEmpty || LoginViewController.events!.isEmpty || LoginViewController.quests!.isEmpty) {
                 return
             }
         }
     }
-    // Hash method
+    // Hash method thats hashes a value with MD5
     func MD5(string: String) -> Data {
         let length = Int(CC_MD5_DIGEST_LENGTH)
         let messageData = string.data(using:.utf8)!
@@ -68,7 +66,7 @@ class HilfsFunktionen: UIViewController {
         }
         return digestData
     }
-    
+    // determines the value of the red number if the user achieves a new achievement
     func achievementBadge() {
         
         if let tabItems = tabBarController?.tabBar.items {

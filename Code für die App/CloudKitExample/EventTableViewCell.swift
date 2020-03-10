@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets the properties for the Cells used in the lower TableView in HomeViewController.swift
 class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCell: UIImageView!

@@ -19,7 +19,7 @@ class LeaderBoardTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     
-
+// Sets the properties for the Cells used in the TableView in LeaderBordViewController.swift
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,7 +28,6 @@ class LeaderBoardTableViewCell: UITableViewCell {
         imageCell.layer.cornerRadius = 10
         imageCell.clipsToBounds = true
         imageCell.layer.backgroundColor = UIColor.white.cgColor
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

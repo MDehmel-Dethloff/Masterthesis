@@ -15,7 +15,7 @@ class SelectIconForTodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    // these actions set the image for a todo
     @IBAction func todo1Action(_ sender: UIButton) {
         CreateTodoViewController.imageForTodo = "todo_1"
         dismiss(animated: true, completion: nil)
